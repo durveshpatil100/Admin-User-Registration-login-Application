@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #45b6fe;
+            color: #FFFFFF;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .user-info {
+            background-color: #0e2433;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>USER Dashboard</h1>
+    </div>
+    <div class="user-info">
+        <h2>Welcome, [[${user.getFullname()}]]</h2>
+        
+        <span sec:authorize="isAuthenticated">
+        <a th:href="@{/logout}">Logout
+        </span>
+    </div>
+    <!-- Add more dashboard components here -->
+</body>
+</html>
